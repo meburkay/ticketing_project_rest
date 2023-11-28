@@ -1,5 +1,6 @@
 package com.cydeo.dto;
 import com.cydeo.enums.Status;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,8 +38,10 @@ public class ProjectDTO {
     private String projectDetail;
 
     private Status projectStatus;
-
+    //When we are creating tasks we must not give this information in the body. Because we have a querry for this and it calculated automatically. because of that we put jackson annotation as a read_only. By this we specify that we will not write this information.
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int completeTaskCounts;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int unfinishedTaskCounts;
 
     public ProjectDTO(String projectName, String projectCode, UserDTO assignedManager, LocalDate startDate, LocalDate endDate, String projectDetail, Status projectStatus) {
