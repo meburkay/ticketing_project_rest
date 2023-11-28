@@ -1,5 +1,6 @@
 package com.cydeo.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import org.springframework.http.HttpStatus;
 
@@ -7,6 +8,8 @@ import org.springframework.http.HttpStatus;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+//means do not show null fields
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseWrapper {
 
     private boolean success;
