@@ -34,6 +34,17 @@
             <artifactId>keycloak-spring-boot-starter</artifactId>
             <version>18.0.0</version>
         </dependency>
+<!--        We add these two dependency for keycloak automation. The first one is to create users at the keycloak automatically. It's main duty is to define the keycloak admin to spring. And by doing that we use that admin to create users at keycloak.-->
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-admin-client</artifactId>
+            <version>18.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.ws.rs</groupId>
+            <artifactId>jboss-jaxrs-api_2.1_spec</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
