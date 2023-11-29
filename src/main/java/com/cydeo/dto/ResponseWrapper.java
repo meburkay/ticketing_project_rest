@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 //means do not show null fields
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseWrapper {
