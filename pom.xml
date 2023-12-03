@@ -17,6 +17,22 @@
         <java.version>11</java.version>
     </properties>
     <dependencies>
+<!--        this dependency means that from any starter spring boot dependency exclude logging dependency. Normally any spring boot starter dependency have this logging dependency inside and it uses Logback. When we put this they exclude it. By doing this we can see the "Commons Logging" which is the basic logging of Spring Boot.-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+<!--        Here we add log4j2 dependency instead of default logging dependency. There is one important thing here. If we don't exclude logging dependency we have an exception because spring can not know which log dependency will it use. So if we want to use another log dependency instead of logging first we have to exclude it.-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
